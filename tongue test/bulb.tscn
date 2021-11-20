@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SphereMesh" id=1]
+
+[node name="bulb" type="Spatial"]
+
+[node name="Spatial" type="MeshInstance" parent="."]
+transform = Transform( -0.1, 0, -1.50996e-08, 0, 0.1, 0, 1.50996e-08, 0, -0.1, 0, 0, -0.103 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000261545, 6.67572e-06, -0.430812 )

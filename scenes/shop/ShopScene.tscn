@@ -1,0 +1,317 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/shop/ShopAsset.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://scenes/shop/OVERLAY.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 0.406126, 0.329877, 1 ),
+"update": 0,
+"values": [ Vector2( 384, 540 ), Vector2( 384, 270 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 0.329877, 1 ),
+"update": 0,
+"values": [ Vector2( 0.25, 0.25 ), Vector2( 0.25, 0.25 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 0.406126, 0.329877 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 384, 540 ), Vector2( 384, -270 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 0.329877 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.25, 0.25 ), Vector2( 0.25, 0.25 ) ]
+}
+
+[node name="Shop" type="CanvasLayer"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 480, 270 )
+current = true
+
+[node name="ShopScene" type="Node2D" parent="."]
+position = Vector2( 384, 540 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Shop_BG" type="Node2D" parent="ShopScene"]
+
+[node name="icon" type="Sprite" parent="ShopScene/Shop_BG"]
+position = Vector2( 477.858, 265.282 )
+scale = Vector2( 14.9957, 8.296 )
+texture = ExtResource( 2 )
+
+[node name="Spike" type="Node2D" parent="ShopScene"]
+
+[node name="icon2" type="Sprite" parent="ShopScene/Spike"]
+position = Vector2( 696.738, 331.508 )
+scale = Vector2( 3.52554, 3.63077 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ShopScene/Spike"]
+
+[node name="Shop_FG" type="Node2D" parent="ShopScene"]
+
+[node name="icon" type="Sprite" parent="ShopScene/Shop_FG"]
+position = Vector2( 482.348, 452.734 )
+scale = Vector2( 14.9255, 2.43815 )
+texture = ExtResource( 2 )
+
+[node name="icon2" type="Sprite" parent="ShopScene/Shop_FG"]
+position = Vector2( 65.9143, 270.895 )
+scale = Vector2( 1.912, 8.12062 )
+texture = ExtResource( 2 )
+
+[node name="icon3" type="Sprite" parent="ShopScene/Shop_FG"]
+position = Vector2( 481.225, 65.4842 )
+scale = Vector2( 14.8905, 1.70154 )
+texture = ExtResource( 2 )
+
+[node name="icon4" type="Sprite" parent="ShopScene/Shop_FG"]
+position = Vector2( 889.801, 270.895 )
+scale = Vector2( 2.12246, 8.12062 )
+texture = ExtResource( 2 )
+
+[node name="c1" type="Node2D" parent="ShopScene"]
+
+[node name="icon2" type="Sprite" parent="ShopScene/c1"]
+position = Vector2( 932.455, 414.57 )
+scale = Vector2( 3.52554, 3.63077 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ShopScene/c1"]
+
+[node name="c2" type="Node2D" parent="ShopScene"]
+
+[node name="icon2" type="Sprite" parent="ShopScene/c2"]
+position = Vector2( 708.884, 483.544 )
+scale = Vector2( 3.52554, 3.63077 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ShopScene/c2"]
+
+[node name="c3" type="Node2D" parent="ShopScene"]
+
+[node name="icon2" type="Sprite" parent="ShopScene/c3"]
+position = Vector2( 64.334, 407.435 )
+scale = Vector2( 3.52554, 3.63077 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ShopScene/c3"]
+
+[node name="OVERLAY" type="Control" parent="ShopScene"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="self_bones" type="Control" parent="ShopScene/OVERLAY"]
+margin_left = 856.0
+margin_top = 88.0
+margin_right = 896.0
+margin_bottom = 128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bone_ico" type="AnimatedSprite" parent="ShopScene/OVERLAY/self_bones"]
+position = Vector2( -110.157, -6.72717 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="x" type="AnimatedSprite" parent="ShopScene/OVERLAY/self_bones"]
+position = Vector2( -36.3622, -6.72717 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="bones" type="Label" parent="ShopScene/OVERLAY/self_bones"]
+margin_left = 40.0
+margin_top = -6.72717
+margin_right = 104.0
+margin_bottom = 57.2728
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="category" type="Control" parent="ShopScene/OVERLAY"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="cat1" type="Label" parent="ShopScene/OVERLAY/category"]
+margin_left = 30.204
+margin_top = 18.8775
+margin_right = 212.204
+margin_bottom = 57.8775
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+
+[node name="cat2" type="Label" parent="ShopScene/OVERLAY/category"]
+margin_left = 254.846
+margin_top = 18.8775
+margin_right = 436.846
+margin_bottom = 57.8775
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+
+[node name="cat3" type="Label" parent="ShopScene/OVERLAY/category"]
+margin_left = 507.804
+margin_top = 18.8775
+margin_right = 689.804
+margin_bottom = 57.8775
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cat4" type="Label" parent="ShopScene/OVERLAY/category"]
+margin_left = 719.232
+margin_top = 17.8775
+margin_right = 901.232
+margin_bottom = 56.8775
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Contents" type="ScrollContainer" parent="ShopScene/OVERLAY"]
+margin_left = 59.0
+margin_top = 76.0
+margin_right = 580.0
+margin_bottom = 383.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="The" type="GridContainer" parent="ShopScene/OVERLAY/Contents"]
+margin_right = 550.0
+margin_bottom = 544.0
+custom_constants/vseparation = 96
+custom_constants/hseparation = 179
+columns = 3
+
+[node name="ShopAsset" parent="ShopScene/OVERLAY/Contents/The" instance=ExtResource( 1 )]
+
+[node name="ShopAsset2" parent="ShopScene/OVERLAY/Contents/The" instance=ExtResource( 1 )]
+margin_left = 243.0
+margin_right = 307.0
+
+[node name="icon4" type="TextureRect" parent="ShopScene/OVERLAY/Contents/The"]
+margin_left = 486.0
+margin_right = 550.0
+margin_bottom = 64.0
+texture = ExtResource( 2 )
+
+[node name="icon5" type="TextureRect" parent="ShopScene/OVERLAY/Contents/The"]
+margin_top = 160.0
+margin_right = 64.0
+margin_bottom = 224.0
+texture = ExtResource( 2 )
+
+[node name="icon6" type="TextureRect" parent="ShopScene/OVERLAY/Contents/The"]
+margin_left = 243.0
+margin_top = 160.0
+margin_right = 307.0
+margin_bottom = 224.0
+texture = ExtResource( 2 )
+
+[node name="icon7" type="TextureRect" parent="ShopScene/OVERLAY/Contents/The"]
+margin_left = 486.0
+margin_top = 160.0
+margin_right = 550.0
+margin_bottom = 224.0
+texture = ExtResource( 2 )
+
+[node name="icon8" type="TextureRect" parent="ShopScene/OVERLAY/Contents/The"]
+margin_top = 320.0
+margin_right = 64.0
+margin_bottom = 384.0
+texture = ExtResource( 2 )
+
+[node name="icon9" type="TextureRect" parent="ShopScene/OVERLAY/Contents/The"]
+margin_left = 243.0
+margin_top = 320.0
+margin_right = 307.0
+margin_bottom = 384.0
+texture = ExtResource( 2 )
+
+[node name="icon10" type="TextureRect" parent="ShopScene/OVERLAY/Contents/The"]
+margin_left = 486.0
+margin_top = 320.0
+margin_right = 550.0
+margin_bottom = 384.0
+texture = ExtResource( 2 )
+
+[node name="icon11" type="TextureRect" parent="ShopScene/OVERLAY/Contents/The"]
+margin_top = 480.0
+margin_right = 64.0
+margin_bottom = 544.0
+texture = ExtResource( 2 )
+
+[node name="icon12" type="TextureRect" parent="ShopScene/OVERLAY/Contents/The"]
+margin_left = 243.0
+margin_top = 480.0
+margin_right = 307.0
+margin_bottom = 544.0
+texture = ExtResource( 2 )
+
+[node name="icon13" type="TextureRect" parent="ShopScene/OVERLAY/Contents/The"]
+margin_left = 486.0
+margin_top = 480.0
+margin_right = 550.0
+margin_bottom = 544.0
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ShopScene"]
+anims/in = SubResource( 2 )
+anims/out = SubResource( 3 )

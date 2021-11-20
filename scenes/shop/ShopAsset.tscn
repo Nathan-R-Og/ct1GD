@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="ShopAsset" type="Control"]
+margin_right = 64.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buyButton" type="Button" parent="."]
+margin_right = 172.0
+margin_bottom = 55.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.85, 0.85 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="name" type="Label" parent="."]
+margin_left = 57.881
+margin_right = 201.881
+margin_bottom = 32.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="desc" type="Label" parent="."]
+margin_left = 57.8811
+margin_top = 27.4271
+margin_right = 201.881
+margin_bottom = 59.4271
+rect_scale = Vector2( 0.75, 0.75 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="boneICO" type="AnimatedSprite" parent="."]
+position = Vector2( 23.5451, 59.7037 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="x" type="AnimatedSprite" parent="."]
+position = Vector2( 57.1809, 58.0219 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="bones" type="Label" parent="."]
+margin_left = 100.409
+margin_top = 53.2728
+margin_right = 165.409
+margin_bottom = 85.2728
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

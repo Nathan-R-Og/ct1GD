@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="BoxShape" id=2]
+
+[node name="TonguePiece" type="Spatial"]
+
+[node name="NextPos" type="Position3D" parent="."]
+transform = Transform( 0.0623287, 0, 0, 0, 0.0640981, 0, 0, 0, 0.246339, 0, 0, 0 )
+
+[node name="TonguePiece" type="MeshInstance" parent="."]
+transform = Transform( 0.0623287, 0, 0, 0, 0.0640981, 0, 0, 0, 0.246339, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="TouchArea" type="Area" parent="TonguePiece"]
+
+[node name="CollisionShape" type="CollisionShape" parent="TonguePiece/TouchArea"]
+shape = SubResource( 2 )
