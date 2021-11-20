@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/whole.obj-0cd44c3d2088ac432f77bcb589fe25b6.mesh"
+
+[deps]
+
+files=[ "res://.import/whole.obj-0cd44c3d2088ac432f77bcb589fe25b6.mesh" ]
+
+source_file="res://stage/jungle/whole.obj"
+dest_files=[ "res://.import/whole.obj-0cd44c3d2088ac432f77bcb589fe25b6.mesh", "res://.import/whole.obj-0cd44c3d2088ac432f77bcb589fe25b6.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 9, 9, 9 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
