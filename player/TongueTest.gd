@@ -80,7 +80,7 @@ func _physics_process(delta):
 
 #button commands
 	var jump_attempt = Input.is_action_just_pressed("jump")
-	var shoot_attempt = Input.is_action_pressed("shoot")
+	var shoot_attempt = Input.is_action_pressed("fire1")
 
 	var sharp_turn = hspeed > 0.1 and rad2deg(acos(dir.dot(hdir))) > SHARP_TURN_THRESHOLD
 

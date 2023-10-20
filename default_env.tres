@@ -8,6 +8,4 @@ panorama = ExtResource( 1 )
 [resource]
 background_mode = 2
 background_sky = SubResource( 1 )
-tonemap_mode = 2
-tonemap_white = 6.0
 adjustment_brightness = 8.0

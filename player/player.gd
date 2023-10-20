@@ -102,12 +102,12 @@ func _physics_process(delta):
 
 #button commands
 	var jump_attempt = Input.is_action_just_pressed("jump")
-	var shoot_attempt = Input.is_action_pressed("shoot")
+	var shoot_attempt = Input.is_action_pressed("fire1")
 	var sprint_attempt = Input.is_action_pressed("fire2")
 
-	if Input.is_action_pressed("shoot") and tonguingAble == true:
+	if Input.is_action_pressed("fire1") and tonguingAble == true:
 		tonguing = true
-	if Input.is_action_just_released("shoot"):
+	if Input.is_action_just_released("fire1"):
 		tonguing = false
 
 	var sharp_turn = hspeed > 0.1 and rad2deg(acos(dir.dot(hdir))) > SHARP_TURN_THRESHOLD
@@ -185,9 +185,9 @@ func _physics_process(delta):
 
 
 #######################shooting
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_pressed("fire1"):
 		linear_velocity = move_and_slide(Vector3(0,linear_velocity.y,0), -gravity.normalized())
-	if Input.is_action_just_released("shoot"):
+	if Input.is_action_just_released("fire1"):
 		pass
 	if shoot_blend > 0:
 		shoot_blend -= delta * SHOOT_SCALE

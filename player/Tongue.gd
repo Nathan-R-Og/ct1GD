@@ -46,12 +46,12 @@ func _process(delta):
 	print(String(staleDir) + " stale")
 
 
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_pressed("fire1"):
 		tongueTime += delta
 		tongueIteration += (tongueTime * 10)
 		tongueIteration = floor(tongueIteration)
 		tongueThing()
-	if Input.is_action_just_released("shoot"):
+	if Input.is_action_just_released("fire1"):
 		tongueTime = 0
 		tongueIteration = 0
 		var i = get_child_count()
@@ -65,7 +65,7 @@ func tongueThing():
 		var tonguePiece = load("res://player/TonguePiece.tscn").instance()
 		add_child(tonguePiece)
 		tonguePiece.translation.z = 0
-		tonguePiece.translation.y = 1.607
+		tonguePiece.translation.y = 1.607 
 		if Fakedir.x == 0.0 and Fakedir.z == 0.0:
 			tonguePiece.rotation_degrees.y = fakeDirdir + 90
 		else:

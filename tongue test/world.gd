@@ -17,14 +17,14 @@ var shopNode = Node
 func _process(delta):
 	
 
-	if (Input.is_action_just_pressed("shoot") and shopUp == true):
+	if (Input.is_action_just_pressed("fire1") and shopUp == true):
 		move("close")
 
 
 func move(way):
 	match way:
 		"open":
-			player.movementType = 4
+			player.movementType = 0
 			shopUp = true
 			shopped = true
 			shopNode = shop.instance()
@@ -39,7 +39,7 @@ func move(way):
 
 
 func _on_Area_body_entered(body):
-	if body == player.get_child(0) and shopUp != true:
+	if body == player.get_node("PlayerBody") and shopUp != true:
 		move("open")
 		player.movementType = 4
 		shopUp = true
@@ -52,5 +52,5 @@ func _on_DisableArea_body_exited(body):
 
 
 func _on_Area_body_exited(body):
-	if body == player.get_child(0):
+	if body == player.get_node("PlayerBody"):
 		shopped = false

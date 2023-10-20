@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://stage/items/hearts/redHeart.png" type="Texture" id=1]
+
+[node name="RHeart" type="Spatial"]
+transform = Transform( 3.15, 0, 0, 0, 3.15, 0, 0, 0, 3.15, 0, 0, 0 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+extra_cull_margin = 16384.0
+billboard = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0.5, 48, 40 )

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://stage/jungle/!Objects/decor/greenery/greenery.png" type="Texture" id=1]
+
+[node name="Greenery" type="Spatial"]
+transform = Transform( 3.7, 0, 0, 0, 3.7, 0, 0, 0, 3.7, 0, 0, 0 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+extra_cull_margin = 16384.0
+billboard = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0.5, 48, 40 )

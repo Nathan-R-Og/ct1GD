@@ -190,7 +190,7 @@ func _process(delta):
 
 
 
-			if Input.is_action_just_pressed("shoot") and latchAfter == false:
+			if Input.is_action_just_pressed("fire1") and latchAfter == false:
 				$TonguePiece.tongue()
 			if Input.is_action_just_pressed("trigger") and $KinematicBody.is_on_floor():
 				$TonguePiece.vault(velocity, playerInput)
@@ -206,7 +206,7 @@ func _process(delta):
 			
 			
 			
-			if Input.is_action_just_released("shoot"):
+			if Input.is_action_just_released("fire1"):
 				$TonguePiece.reel()
 			
 			
@@ -247,7 +247,7 @@ func _process(delta):
 			
 			
 			
-			if Input.is_action_just_released("shoot") or latchONTime >= latchBroTimeUp or (Input.is_action_just_pressed("jump") and not on):
+			if Input.is_action_just_released("fire1") or latchONTime >= latchBroTimeUp or (Input.is_action_just_pressed("jump") and not on):
 				velocity.y = 0
 				latched = false
 				$TonguePiece.reel()
